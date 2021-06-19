@@ -1,30 +1,18 @@
 import tkinter as tk
 from tkinter.constants import LEFT, RIGHT
 
+#Window
 window = tk.Tk()
 window.geometry("848x480")
 window.title("Translator App")
 
-frame = tk.Frame(window)
-frame.pack()
-
-leftFrame = tk.Frame(window)
-leftFrame.configure(background="red")
-leftFrame.pack(side=LEFT)
-
-rightFrame = tk.Frame(window)
-rightFrame.configure(background="blue")
-rightFrame.pack(side=RIGHT)
-
 #Input Side (Left)
-label = tk.Label(leftFrame, text = "Enter Text" )
-label.pack()
+inputLabel = tk.Label(text = "Enter Text" ).grid(row=0, column=0)
+input = tk.StringVar()
 
-translateInput = tk.Entry(leftFrame, width = 20)
-translateInput.pack(padx = 5, pady = 5)
+inputEntry = tk.Entry().grid(row=0, column=1)
 
 #Output Side (Right)
-label = tk.Label(rightFrame, text = "Translation:" )
-label.pack()
+label = tk.Label(text = "Translation:" ).grid(row=1, column=0)
 
 window.mainloop()
